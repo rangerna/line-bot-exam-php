@@ -17,8 +17,7 @@
 	$messages['replyToken'] = $replyToken;
 	$messages['messages'][0] = getFormatTextMessage($Message);
 
-	$encodeJson = json_encode($messages);
-	$encodeJson=getFormatTextMessage("ฮาโหล  ".$text)
+	$encodeJson = json_encode("ฮาโหล  ".$text);
   	$results = sentMessage($encodeJson,$LINEDatas);
 	
 	/*Return HTTP Request 200*/
