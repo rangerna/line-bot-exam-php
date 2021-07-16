@@ -10,22 +10,18 @@
 	$userId = $deCode['events'][0]['source']['userId'];
 	$text = $deCode['events'][0]['message']['text'];
 
-	
-
 	$LINEDatas['url'] = "https://api.line.me/v2/bot/message/reply";
   	$LINEDatas['token'] = "GEWRF0Kaz+Dur3IwPEsrHjaVmdNt7Jn8FI/jTkPv5Xu9a9yT+Fy/ht9QDEfrvRm+a3gM/cmOLaBzSjTnil3TvbX/gYXsHZBGV1JMfhpT26beEhWvdznO2lhPfqPuYbPtqssCfOTZgZ1bWbZ3oBvCWgdB04t89/1O/w1cDnyilFU=";
 
-
-
-
-
 	function getFormatTextMessage($Message)
 	{
-	$messages = [];
-	$messages['replyToken'] = $replyToken;
-	$messages['messages'][0] = getFormatTextMessage($Message);
+		$messages = [];
+		$messages['replyToken'] = $replyToken;
+		$messages['messages'][0] = getFormatTextMessage($Message);
 
-	$encodeJson = json_encode($messages);
+		$encodeJson = json_encode($messages);
+		
+		return $encodeJson
 	}
 	$encodeJson=getFormatTextMessage("ฮาโหล  ".$text)
   	$results = sentMessage($encodeJson,$LINEDatas);
